@@ -1,4 +1,4 @@
-import { fakeAsync, TestBed } from '@angular/core/testing';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { CriminalRecord } from 'src/app/model/criminalRecord.model';
 
 import { CriminalRecordService } from './criminal-record.service';
@@ -20,7 +20,9 @@ describe('CriminalRecordService', () => {
     service.getByPersonId(1).subscribe(response => {
       getResponse = response;
     });
+    tick(1000);
     expect(getResponse).toBeDefined();
     expect(getResponse?.id).toBe(1);
+    expect(getResponse?.personId).toBe(1);
   }));
 });
