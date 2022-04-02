@@ -1,4 +1,4 @@
-export class CriminalRecord {
+export class LocationData {
     id: number;
     personId: number;
     locationLatitude: number;
