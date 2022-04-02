@@ -6,10 +6,9 @@ import { CriminalRecord } from 'src/app/model/criminalRecord.model';
 })
 export class CriminalRecordService {
 
-  criminalRecordMap = new Map();
+  criminalRecordList: Array<CriminalRecord> = [];
 
   constructor() {
-    const personOne = new CriminalRecord(1, 1, 'Cooking crystal meth');
-    this.criminalRecordMap.set(personOne.id, personOne);
+    this.criminalRecordList.push(new CriminalRecord(1, 1, 'Cooking crystal meth'));
   }
 }
