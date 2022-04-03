@@ -1,3 +1,6 @@
+<div *ngIf="!person">
+  <p>Loading person information...</p>
+</div>
 <div *ngIf="person">
   <p>Id: {{person.id}}</p>
   <p>Name: {{person.name}}</p>

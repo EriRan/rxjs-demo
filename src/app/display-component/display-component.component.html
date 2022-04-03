@@ -1,5 +1,4 @@
 <button (click)="displayPerson(1)">Display person</button>
-<div>
-  <p *ngIf="callDone && !person">LOADING...</p>
+<div *ngIf="callDone">
+  <app-person-component [person]="person"></app-person-component>
 </div>
-<app-person-component *ngIf="person" [person]="person"></app-person-component>
