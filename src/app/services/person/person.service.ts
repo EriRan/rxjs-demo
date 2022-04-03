@@ -5,7 +5,7 @@ import { Person } from 'src/app/model/person.model';
 @Injectable({
   providedIn: 'root'
 })
-export class PersonServiceService {
+export class PersonService {
 
   personMap = new Map();
 

@@ -1,14 +1,14 @@
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { Person } from 'src/app/model/person.model';
 
-import { PersonServiceService } from './person-service.service';
+import { PersonService } from './person.service';
 
 describe('PersonServiceService', () => {
-  let service: PersonServiceService;
+  let service: PersonService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PersonServiceService);
+    service = TestBed.inject(PersonService);
   });
 
   it('should be created', () => {
