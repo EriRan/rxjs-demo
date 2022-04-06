@@ -10,7 +10,7 @@ export class LocationDataService {
   locationDataList: Array<LocationData> = [];
 
   constructor() {
-    this.locationDataList.push(new LocationData(1, 1, 123, 456));
+    this.locationDataList.push(new LocationData(1, 1, 'Texas'));
   }
 
   /**

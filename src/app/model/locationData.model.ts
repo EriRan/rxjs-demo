@@ -1,13 +1,11 @@
 export class LocationData {
     id: number;
     personId: number;
-    locationLatitude: number;
-    locationLongitude: number;
+    city: string
 
-    constructor(id:number, personId: number, locationLatitude: number, locationLongitude: number) {
+    constructor(id:number, personId: number, city: string) {
         this.id = id;
         this.personId = personId;
-        this.locationLatitude = locationLatitude;
-        this.locationLongitude = locationLongitude;
+        this.city = city;
     }
   }
