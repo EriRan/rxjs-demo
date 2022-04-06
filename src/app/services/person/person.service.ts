@@ -6,7 +6,7 @@ import { Person } from 'src/app/model/person.model';
   providedIn: 'root',
 })
 export class PersonService {
-  personMap = new Map();
+  personMap = new Map<number, Person>();
 
   constructor() {
     const personOne = new Person(1, 'Walter White');
