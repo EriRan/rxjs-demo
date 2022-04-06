@@ -21,7 +21,7 @@ export class LocationDataService {
    getLocationByPersonId(personId: number): Observable<LocationData | undefined> {
     const getObservable = of(this.locationDataList.find(locationData => locationData.personId === personId));
     return getObservable.pipe(
-      delay(1000)
+      delay(1500)
     );
   }
 }
