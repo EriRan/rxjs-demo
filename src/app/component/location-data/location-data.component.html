@@ -1,4 +1,8 @@
 <div *ngIf="locationData">
   <h2>Location data</h2>
-  <p>City: {{locationData.city}}</p>
+  <p>City: {{ locationData.city }}</p>
+</div>
+<div *ngIf="!locationData">
+  <h2>Location data</h2>
+  <p>No location data available</p>
 </div>

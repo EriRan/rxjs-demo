@@ -13,7 +13,7 @@ export class CriminalRecordComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.criminalRecord?.crimeDescription
+    
   }
 
 }

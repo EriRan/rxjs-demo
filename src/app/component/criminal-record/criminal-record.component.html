@@ -1,4 +1,8 @@
 <div *ngIf="criminalRecord">
   <h2>Crime description</h2>
-  <p>{{criminalRecord.crimeDescription}}</p>
+  <p>{{ criminalRecord.crimeDescription }}</p>
+</div>
+<div *ngIf="!criminalRecord">
+  <h2>Crime description</h2>
+  <p>No criminal record</p>
 </div>
