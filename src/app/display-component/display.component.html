@@ -1,4 +1,6 @@
 <button (click)="displayPerson(1)">Display person</button>
 <div *ngIf="callDone">
   <app-person-component [person]="person"></app-person-component>
+  <app-criminal-record [criminalRecord]="criminalRecord"></app-criminal-record>
+  <app-location-data [locationData]="locationData"></app-location-data>
 </div>
