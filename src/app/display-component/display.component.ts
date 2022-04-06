@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs';
+import { combineLatest, first, map } from 'rxjs';
+import { CriminalRecord } from '../model/criminalRecord.model';
+import { LocationData } from '../model/locationData.model';
 import { Person } from '../model/person.model';
+import { CriminalRecordService } from '../services/criminalRecord/criminal-record.service';
+import { LocationDataService } from '../services/location/location-data.service';
 import { PersonService } from '../services/person/person.service';
 
 @Component({
@@ -9,11 +13,16 @@ import { PersonService } from '../services/person/person.service';
   styleUrls: ['./display.component.css'],
 })
 export class DisplayComponent implements OnInit {
-
   person?: Person;
+  criminalRecord?: CriminalRecord;
+  locationData?: LocationData;
   callDone: boolean = false;
 
-  constructor(private personService: PersonService) {}
+  constructor(
+    private personService: PersonService,
+    private criminalRecordService: CriminalRecordService,
+    private locationDataService: LocationDataService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -32,6 +41,16 @@ export class DisplayComponent implements OnInit {
           return;
         }
         this.person = responsePerson;
+        combineLatest([
+          this.criminalRecordService.getCriminalDataByPersonId(this.person.id),
+          this.locationDataService.getLocationByPersonId(this.person.id),
+        ]).pipe(
+          first(),
+          map(([criminalRecord, locationData]) => {
+            this.criminalRecord = criminalRecord;
+            this.locationData = locationData;
+          })
+          );
       });
   }
 }
