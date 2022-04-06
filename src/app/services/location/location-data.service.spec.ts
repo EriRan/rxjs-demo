@@ -17,7 +17,7 @@ describe('LocationDataService', () => {
 
   it('getByPersonId should return a person', fakeAsync(() => {
     let getResponse: LocationData | undefined;
-    service.getByPersonId(1).subscribe(response => {
+    service.getLocationByPersonId(1).subscribe(response => {
       getResponse = response;
     });
     tick(1000);

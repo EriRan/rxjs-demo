@@ -18,7 +18,7 @@ export class CriminalRecordService {
    * @param personId 
    * @returns 
    */
-  getByPersonId(personId: number): Observable<CriminalRecord | undefined> {
+  getCriminalDataByPersonId(personId: number): Observable<CriminalRecord | undefined> {
     const getObservable = of(this.criminalRecordList.find(criminalRecord => criminalRecord.personId === personId));
     return getObservable.pipe(
       delay(1000)

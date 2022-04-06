@@ -17,7 +17,7 @@ describe('CriminalRecordService', () => {
 
   it('getByPersonId should return a person', fakeAsync(() => {
     let getResponse: CriminalRecord | undefined;
-    service.getByPersonId(1).subscribe(response => {
+    service.getCriminalDataByPersonId(1).subscribe(response => {
       getResponse = response;
     });
     tick(1000);
