@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { filter, first, map, of, take } from 'rxjs';
+import { first } from 'rxjs';
 import { Person } from '../model/person.model';
 import { PersonService } from '../services/person/person.service';
 
@@ -25,9 +25,7 @@ export class DisplayComponentComponent implements OnInit {
     this.callDone = true;
     this.personService
       .get(id)
-      .pipe<Person | undefined>(
-        first()
-      )
+      .pipe(first())
       .subscribe((responsePerson) => {
         if (!responsePerson) {
           this.person = new Person(-1, 'NOT FOUND');
