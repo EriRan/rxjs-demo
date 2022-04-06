@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { combineLatest, first, map } from 'rxjs';
+import { combineLatest, first, map, tap } from 'rxjs';
 import { CriminalRecord } from '../model/criminalRecord.model';
 import { LocationData } from '../model/locationData.model';
 import { Person } from '../model/person.model';
@@ -31,6 +31,8 @@ export class DisplayComponent implements OnInit {
    */
   displayPerson(id: number): void {
     this.person = undefined;
+    this.criminalRecord = undefined;
+    this.locationData = undefined;
     this.callDone = true;
     this.personService
       .get(id)
@@ -44,13 +46,12 @@ export class DisplayComponent implements OnInit {
         combineLatest([
           this.criminalRecordService.getCriminalDataByPersonId(this.person.id),
           this.locationDataService.getLocationByPersonId(this.person.id),
-        ]).pipe(
-          first(),
-          map(([criminalRecord, locationData]) => {
+        ])
+          .pipe(first())
+          .subscribe(([criminalRecord, locationData]) => {
             this.criminalRecord = criminalRecord;
             this.locationData = locationData;
-          })
-          );
+          });
       });
   }
 }
