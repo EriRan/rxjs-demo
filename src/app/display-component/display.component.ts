@@ -5,10 +5,10 @@ import { PersonService } from '../services/person/person.service';
 
 @Component({
   selector: 'app-display-component',
-  templateUrl: './display-component.component.html',
-  styleUrls: ['./display-component.component.css'],
+  templateUrl: './display.component.html',
+  styleUrls: ['./display.component.css'],
 })
-export class DisplayComponentComponent implements OnInit {
+export class DisplayComponent implements OnInit {
 
   person?: Person;
   callDone: boolean = false;

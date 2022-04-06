@@ -3,10 +3,10 @@ import { Person } from 'src/app/model/person.model';
 
 @Component({
   selector: 'app-person-component',
-  templateUrl: './person-component.component.html',
-  styleUrls: ['./person-component.component.css']
+  templateUrl: './person.component.html',
+  styleUrls: ['./person.component.css']
 })
-export class PersonComponentComponent implements OnInit {
+export class PersonComponent implements OnInit {
 
   @Input('person') person?: Person;
 
